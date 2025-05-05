@@ -72,16 +72,16 @@ class BrickBreaker extends FlameGame with HasCollisionDetection, KeyboardEvents,
     );
 
     world.addAll([
-      // Drop the await
-      for (var i = 0; i < brickColors.length; i++)
-        for (var j = 1; j <= 5; j++)
-          Brick(
-            position: Vector2(
-              (i + 0.5) * brickWidth + (i + 1) * brickGutter,
-              (j + 2.0) * brickHeight + j * brickGutter,
+      for (var row = 0; row < brickMatrix.length; row++)
+        for (var col = 0; col < brickMatrix[row].length; col++)
+          if (brickMatrix[row][col] != 0)
+            Brick(
+              position: Vector2(
+                (col + 0.5) * brickWidth + (col + 1) * brickGutter,
+                (row + 2.0) * brickHeight + (row + 1) * brickGutter,
+              ),
+              color: brickColors[brickMatrix[row][col] - 1]!,
             ),
-            color: brickColors[i],
-          ),
     ]);
   }
 
