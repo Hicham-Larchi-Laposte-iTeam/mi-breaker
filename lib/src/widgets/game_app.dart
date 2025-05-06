@@ -67,10 +67,7 @@ class _GameAppState extends State<GameApp> {
                                   ),
                               PlayState.won.name:
                                   (context, game) => Center(
-                                    child: Text(
-                                      'Y O U   W O N ! ! !',
-                                      style: Theme.of(context).textTheme.headlineLarge,
-                                    ),
+                                    child: Text('Y O U   W O N !', style: Theme.of(context).textTheme.headlineLarge),
                                   ),
                             },
                           ),

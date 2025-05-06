@@ -22,7 +22,6 @@ class Brick extends RectangleComponent with HasGameReference<BrickBreaker>, Coll
     super.onCollisionStart(intersectionPoints, other);
     removeFromParent();
     game.score.value++;
-    print('Score: ${game.score.value}');
 
     if (other is Ball) {
       if (game.world.children.query<Brick>().length == 1) {
